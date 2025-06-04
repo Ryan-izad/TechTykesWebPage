@@ -1,0 +1,179 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #0066ff;
+}
+
+header {
+    background: #0066ff;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Adds space between flex items */
+}
+
+.game-card, .chat-widget {
+    flex: 1 1 300px; /* Flex properties for responsiveness */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+footer {
+    background: #0066ff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center;
+    }
+
+    .game-card, .chat-widget {
+        width: 90%; /* Make sections take up more width on smaller screens */
+        flex: unset; /* Remove flex basis on small screens */
+    }
+}
+
+.chat-box {
+    height: 200px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex; /* Use flexbox for message alignment */
+    flex-direction: column;
+}
+
+.chat-box p {
+    max-width: 70%; /* Limit bubble width */
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Break long words */
+}
+
+.user-message {
+    background-color: #e0e0e0; /* Light grey for user messages */
+    align-self: flex-end; /* Align user messages to the right */
+}
+
+.ai-message {
+    background-color: #bbdefb; /* Light blue for AI messages */
+    color: #0066ff; /* Blue text color for AI */
+    align-self: flex-start; /* Align AI messages to the left */
+}
+
+.chat-input {
+    width: calc(100% - 75px); /* Adjusted width slightly to accommodate button */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.send-btn {
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #4cae4c;
+}
+
+.card-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling if cards overflow */
+    gap: 20px; /* Add space between cards */
+    padding: 10px;
+    justify-content: center; /* Center the cards if they don't fill the container */
+    align-items: center; /* Vertically center cards */
+}
+
+.card {
+    flex: 0 0 200px; /* Prevent cards from growing/shrinking, set a fixed width */
+    height: 350px; /* Adjust height as needed */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for dragging/swapping */
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative; /* Needed for potential absolute positioning during drag */
+    touch-action: none; /* Prevent default touch actions */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 0;
+    color: #0066ff;
+    font-size: 1.2em; /* Slightly smaller font size for side-by-side view */
+}
+
+/* Remove stacking styles */
+.card:nth-child(1) {
+    transform: none;
+    z-index: auto;
+}
+
+.card:nth-child(2) {
+    transform: none;
+    z-index: auto;
+}
+
+.card:nth-child(3) {
+    transform: none;
+    z-index: auto;
+}
+
+.card.dragging {
+    cursor: grabbing;
+    opacity: 0.8; /* Reduce opacity while dragging */
+    z-index: 10; /* Bring dragged card to front */
+} 

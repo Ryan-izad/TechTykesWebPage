@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Assets/Images/techtykes.png" alt="TechTykes Logo" class="logo">
+        </div>
+        <h1>Welcome to TechTykes!</h1>
+    </header>
+
+    <main class="container">
+        <section class="game-card">
+            <h2>Character Cards</h2>
+            <div class="card-container">
+                <div class="card" data-character="beckham">
+                    <img src="Assets/Images/Beckham.png" alt="Beckham">
+                </div>
+                <div class="card" data-character="ella">
+                    <img src="Assets/Images/Ella.png" alt="Ella">
+                </div>
+                <div class="card" data-character="paisley">
+                    <img src="Assets/Images/Paisley.png" alt="Paisley">
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-widget">
+            <h2>AI Chat Widget</h2>
+            <div class="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type your message...">
+            <button class="send-btn" id="send-btn">Send</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Ryan's Sample Webpage</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
